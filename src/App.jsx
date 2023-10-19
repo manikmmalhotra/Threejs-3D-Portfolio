@@ -11,11 +11,37 @@ import {
   Works,
   StarsCanvas,
 } from "./components";
+import { useState } from "react";
+import { useEffect } from "react";
+import { PacmanLoader } from "react-spinners";
 
 const App = () => {
+
+  const [loading, setLoading] = useState(false);
+
+  useEffect(()=>{
+    setLoading(true)
+    setTimeout(()=>{
+      setLoading(false)
+    },8000)
+  },[])
+
+
+
   return (
     <BrowserRouter>
-      <div className="relative z-0 bg-primary">
+    {
+      loading ?
+      <PacmanLoader
+        color="#d67036"
+        margin={1}
+        size={30}
+        loading={loading}
+      />
+
+      :
+
+       <div className="relative z-0 bg-primary">
         <div className="bg-cover bg-no-repeat bg-center">
           <Navbar />
           <Hero />
@@ -31,6 +57,9 @@ const App = () => {
           <StarsCanvas />
         </div>
       </div>
+
+    }
+     
     </BrowserRouter>
   );
 };

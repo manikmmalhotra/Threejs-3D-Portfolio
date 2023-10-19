@@ -1,7 +1,13 @@
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
-import { ComputersCanvas } from "./canvas";
+import { Canvas } from '@react-three/fiber';
+import { OrbitControls, Preload } from '@react-three/drei';
+import Model from './Model'; /* highlight-line */
+import { Suspense } from "react";
+import  CanvasLoader  from "./Loader";
+import { EarthCanvas } from "./canvas";
+import Me from "./canvas/Me";
 
 const Hero = () => {
   return (
@@ -9,12 +15,7 @@ const Hero = () => {
       <div
         className={`absolute inset-0 top-[120px] max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
       >
-        <div className="flex flex-col justify-center items-center mt-5">
-          <div className="w-5 h-5 rounded-full bg-[#915EFF]" />
-          <div className="w-1 sm:h-80 h-40 violet-gradient" />
-        </div>
-
-        <div>
+        <div className={` mt-20`}>
           <h1 className={`${styles.heroHeadText} text-white`}>
             Hi, I'm <span className="text-[#915EFF]">Manik Malhotra</span>
           </h1>
@@ -24,12 +25,37 @@ const Hero = () => {
           </p>
         </div>
 
-              <ComputersCanvas />
-              
 
-      </div>
-      
+        {/* <Canvas
+         camera={{ position: [0, 0, 0], fov: 15 }}>
+         <ambientLight intensity={1.25} />
+         <ambientLight intensity={0.1} />
+         <directionalLight intensity={0.4} />
+         <Suspense fallback={<CanvasLoader />}>
+           <OrbitControls
+            enableZoom={true}
+            maxPolarAngle={Math.PI / 2}
+            minPolarAngle={Math.PI / 2}
+          />
+            <Model scale={0.225} position={[0, 0,0]} />
+         </Suspense>
+      </Canvas> */}
 
+      {/* <Canvas
+         camera={{ position: [2, 0, 12.25], fov: 15 }}
+      >
+         <ambientLight intensity={1.25} />
+         <ambientLight intensity={0.1} />
+         <directionalLight intensity={0.4} />
+         <Suspense fallback={null}>
+            <Model scale={1.2} position={[0.025, -0.6, 0]} />
+         </Suspense>
+         <OrbitControls />
+      </Canvas> */}
+     
+      {/* <EarthCanvas /> */}
+ <Me />
+        </div>
 
       <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center">
         <a href="#about">
