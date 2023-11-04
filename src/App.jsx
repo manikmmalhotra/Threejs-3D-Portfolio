@@ -11,54 +11,45 @@ import {
   Works,
   StarsCanvas,
 } from "./components";
-import { useState } from "react";
-import { useEffect } from "react";
-import { PacmanLoader } from "react-spinners";
+import { Icon,twitter, github } from "react-3d-icons";
+import PortalComponent from "./components/canvas/PortalComponent";
+import Skills from "./components/Skills";
 
 const App = () => {
 
-  const [loading, setLoading] = useState(false);
-
-  useEffect(()=>{
-    setLoading(true)
-    setTimeout(()=>{
-      setLoading(false)
-    },8000)
-  },[])
-
-
+  let cursorBall = document.querySelector(".cursor-ball");
+  let cursorOutline = document.querySelector(".cursor-outline");
+  document.addEventListener("mousemove", (e) => {
+    cursorBall.style.top = e.pageY + "px";
+    cursorBall.style.left = e.pageX + "px";
+  
+    cursorOutline.style.top = e.pageY + "px";
+    cursorOutline.style.left = e.pageX + "px";
+  });
 
   return (
     <BrowserRouter>
-    {
-      loading ?
-      <PacmanLoader
-        color="#d67036"
-        margin={1}
-        size={30}
-        loading={loading}
-      />
-
-      :
-
+    
        <div className="relative z-0 bg-primary">
+          <div className="cursor-ball"></div>
+          <div className="cursor-outline"></div>
+        <StarsCanvas />
         <div className="bg-cover bg-no-repeat bg-center">
           <Navbar />
           <Hero />
-          <StarsCanvas />
         </div>
         <About />
         <Experience />
-        <Tech />
         <Works />
-        <Feedbacks />
+        <div className="portal">
+        <Skills />
+        </div>
         <div className="relative z-0">
           <Contact />
-          <StarsCanvas />
         </div>
       </div>
 
-    }
+    
      
     </BrowserRouter>
   );

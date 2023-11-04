@@ -11,12 +11,99 @@
   font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
   color-scheme: dark;
+  cursor: none;
+}
+
+.cursor-ball {
+  width: 12px;
+  height: 12px;
+  background-color: #ffffff;
+}
+
+.cursor-outline {
+  width: 8rem;
+  height: 8rem;
+  border: 3px solid #ffffff;
+  transition: all 0.1s linear;
+}
+
+.text-wrapper {
+  margin-top: 40px;
+}
+
+.text-wrapper > p {
+  font-size: 4rem;
+  font-weight: 750;
+  text-align: start;
+  color: white; 
+  line-height: 0;
+  text-transform: uppercase;
+  
+}
+
+.cursor-ball, .cursor-outline {
+  border-radius: 50%;
+  position: absolute;
+  z-index: 100;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
 }
 
 .hash-span {
   margin-top: -100px;
   padding-bottom: 100px;
   display: block;
+}
+
+.portal {
+  width: auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px ;
+
+}
+
+.edge-text-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 85vh;
+  width: 95vw;
+}
+
+.top-text,
+.bottom-text,
+.left-text,
+.right-text {
+  position: absolute;
+}
+
+.top-text {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bottom-text {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.left-text {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%) rotate(-90deg);;
+}
+
+.right-text {
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%) rotate(90deg);;
 }
 
 .black-gradient {

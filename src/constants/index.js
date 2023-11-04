@@ -23,6 +23,7 @@ import {
   jobit,
   tripguide,
   threejs,
+  logo
 } from "../assets";
 
 export const navLinks = [
@@ -46,7 +47,7 @@ const services = [
     icon: web,
   },
   {
-    title: "React Native Developer",
+    title: "AR Developer",
     icon: mobile,
   },
   {
@@ -54,7 +55,7 @@ const services = [
     icon: backend,
   },
   {
-    title: "Content Creator",
+    title: "Three.js",
     icon: creator,
   },
 ];
@@ -117,10 +118,10 @@ const technologies = [
 const experiences = [
   {
     title: "React.js Developer",
-    company_name: "Starbucks",
-    icon: starbucks,
+    company_name: "Kylo Apps",
+    icon: logo,
     iconBg: "#383E56",
-    date: "March 2020 - April 2021",
+    date: "Jan 2022 - Mar 2021",
     points: [
       "Developing and maintaining web applications using React.js and other related technologies.",
       "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
@@ -129,11 +130,11 @@ const experiences = [
     ],
   },
   {
-    title: "React Native Developer",
-    company_name: "Tesla",
-    icon: tesla,
-    iconBg: "#E6DEDD",
-    date: "Jan 2021 - Feb 2022",
+    title: "FullStack Developer",
+    company_name: "Outshades Digital Media",
+    icon: logo,
+    iconBg: "#383E56",
+    date: "Feb 2022 - April 2022",
     points: [
       "Developing and maintaining web applications using React.js and other related technologies.",
       "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
@@ -143,10 +144,10 @@ const experiences = [
   },
   {
     title: "Web Developer",
-    company_name: "Shopify",
-    icon: shopify,
+    company_name: "IEEE Student Branch",
+    icon: logo,
     iconBg: "#383E56",
-    date: "Jan 2022 - Jan 2023",
+    date: "August 2019 - august 2022",
     points: [
       "Developing and maintaining web applications using React.js and other related technologies.",
       "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
@@ -155,16 +156,14 @@ const experiences = [
     ],
   },
   {
-    title: "Full stack Developer",
-    company_name: "Meta",
-    icon: meta,
-    iconBg: "#E6DEDD",
-    date: "Jan 2023 - Present",
+    title: "Contributor",
+    company_name: "Layer5",
+    icon: logo,
+    iconBg: "#383E56",
+    date: "july 2022 - August 2022",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Layer5 is powered by a growing community of collaborators representing industry leading, cloud native, open source software.",
+      "I have Contributed to multiple projects in this Organization",
     ],
   },
 ];

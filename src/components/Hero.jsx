@@ -1,61 +1,69 @@
 import { motion } from "framer-motion";
-
 import { styles } from "../styles";
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Preload } from '@react-three/drei';
-import Model from './Model'; /* highlight-line */
-import { Suspense } from "react";
-import  CanvasLoader  from "./Loader";
-import { EarthCanvas } from "./canvas";
 import Me from "./canvas/Me";
+import gsap from "gsap";
+import SplitTextJS from 'split-text-js';
+import { useEffect } from "react";
 
 const Hero = () => {
+
+  
+        useEffect(() => {
+          const titles = gsap.utils.toArray('#mink')
+          const tl = gsap.timeline()
+          titles.forEach(title => {
+            const splitTitle = new SplitTextJS(title);
+            
+            tl .from(splitTitle.chars, {
+                opacity: 0,
+                y: 80,
+                rotateX: -90,
+                stagger: .02
+            }, '<')
+            
+            tl.to(splitTitle.chars, {
+                opacity: 0,
+                y: -80,
+                rotateX: 90,
+                stagger: .02
+            }, '<1')
+
+            .repeat(-1);
+        });
+        }, []);
+
+       
+
+
+
   return (
     <section className={`relative w-full h-screen mx-auto`}>
       <div
-        className={`absolute inset-0 top-[120px] max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
+        className={`absolute inset-0 top-[30px] max-w-5xl mx-auto ${styles.paddingX} flex flex-row items-start gap-3`}
       >
         <div className={` mt-20`}>
           <h1 className={`${styles.heroHeadText} text-white`}>
             Hi, I'm <span className="text-[#915EFF]">Manik Malhotra</span>
           </h1>
-          <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            I develop 3D visuals, user <br className="sm:block hidden" />
-            interfaces and web applications
+          <div className="container">
+        <div className="text-wrapper">
+        <p id="mink" className={`${styles.heroSubText} mt-2 text-white-100`}>
+            I develop
           </p>
+            <p  id="mink">frontend</p>
+            <p id="mink">backend</p> 
+            <p id="mink">react</p> 
+            <p id="mink">3d/ui/ux</p>
+            <p id="mink">Click Me-{">"}</p>
+        </div>
+    </div>
+        </div>
+        <div className="w-full h-full">
+          <Me />
+         
         </div>
 
-
-        {/* <Canvas
-         camera={{ position: [0, 0, 0], fov: 15 }}>
-         <ambientLight intensity={1.25} />
-         <ambientLight intensity={0.1} />
-         <directionalLight intensity={0.4} />
-         <Suspense fallback={<CanvasLoader />}>
-           <OrbitControls
-            enableZoom={true}
-            maxPolarAngle={Math.PI / 2}
-            minPolarAngle={Math.PI / 2}
-          />
-            <Model scale={0.225} position={[0, 0,0]} />
-         </Suspense>
-      </Canvas> */}
-
-      {/* <Canvas
-         camera={{ position: [2, 0, 12.25], fov: 15 }}
-      >
-         <ambientLight intensity={1.25} />
-         <ambientLight intensity={0.1} />
-         <directionalLight intensity={0.4} />
-         <Suspense fallback={null}>
-            <Model scale={1.2} position={[0.025, -0.6, 0]} />
-         </Suspense>
-         <OrbitControls />
-      </Canvas> */}
-     
-      {/* <EarthCanvas /> */}
- <Me />
-        </div>
+      </div>
 
       <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center">
         <a href="#about">

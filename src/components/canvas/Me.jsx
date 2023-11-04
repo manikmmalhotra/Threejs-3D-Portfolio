@@ -3,7 +3,8 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
 import CanvasLoader from "../Loader";
-import Model from "../Model";
+import StarsCanvas from "./Stars";
+import Model from "../model";
 
 
 const Me = () => {
@@ -11,12 +12,12 @@ const Me = () => {
     <Canvas
          camera={{ position: [2, 0, 12.25], fov: 15 }}
       >
-         <ambientLight intensity={0.5} />
-         <directionalLight intensity={0.2} />
+         <ambientLight intensity={0.8} />
+         <directionalLight intensity={0.5} />
          <Suspense fallback={<CanvasLoader />}>
-            <Model scale={1.2} position={[0.025, -0.6, 0]} />
+            <Model scale={1.1} zoom={0} position={[-0, -0.9, 0]} />
          </Suspense>
-         <OrbitControls />
+         <OrbitControls enableZoom={false} />
          
       </Canvas>
   );
