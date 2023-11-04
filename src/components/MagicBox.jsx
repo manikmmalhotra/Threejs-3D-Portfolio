@@ -9,38 +9,14 @@ import Resume from './Resume';
 import * as THREE from "three";
 
 
-const MagicBox = () => {
+const MagicBox = (mousePosition) => {
 
-
-
-
-  const [mouseCoordinates, setMouseCoordinates] = useState({x:0, y:0});
-  
   const side = useRef()
-
   
- 
- const mouseMoveHandler = (event) => {
-  console.log(event);
-   setMouseCoordinates({
-       x:event.clientX,
-       y:event.clientY
-   });
- }
-   
- useEffect(()=>{
-   window.addEventListener('mousemove', mouseMoveHandler);
-   moveJoint(mouseCoordinates, side.current, 100);
-   return () => {
-    window.removeEventListener(
-      'mousemove',
-      mouseMoveHandler,
-    );
-  };
- }, [mouseCoordinates])
-
-
- 
+ useFrame(() => { // Assuming you have mouseX and mouseY defined globally
+  moveJoint(mousePosition.mousePosition.mousePosition, side.current, 100);
+  //moveJoint(mouseCoordinates, nodes.Neck, 65);
+});
 
 function moveJoint(mouse, joint, degreeLimit) {
   let degrees = getMouseDegrees(mouse.x, mouse.y, degreeLimit);
@@ -96,9 +72,6 @@ function getMouseDegrees(x, y, degreeLimit) {
   function Side({ rotation = [0, 0, 0], bg = '#f0f0f0', children, index }) {
     const mesh = useRef()
     const { nodes } = useGLTF('/aobox-transformed.glb')
-    useFrame((state, delta) => {
-      mesh.current.rotation.y = mesh.current.rotation.y 
-    })
     return (
       <MeshPortalMaterial attach={`material-${index}`}>
         {/** Everything in here is inside the portal and isolated from the canvas */}

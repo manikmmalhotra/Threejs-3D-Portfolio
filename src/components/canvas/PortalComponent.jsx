@@ -6,7 +6,7 @@ import { CanvasLoader } from '..'
 
 import * as THREE from "three";
 
-const PortalComponent = () => {
+const PortalComponent = (mousePosition) => {
 //   const sides = useRef();
    
 
@@ -74,7 +74,7 @@ const PortalComponent = () => {
         near: 0.1,
         far: 200, }}>
            <Suspense fallback={<CanvasLoader />}>
-            <MagicBox  scale={1} />
+            <MagicBox mousePosition={mousePosition}  scale={1} />
             </Suspense>
             <OrbitControls enableZoom={false} />
         </Canvas>

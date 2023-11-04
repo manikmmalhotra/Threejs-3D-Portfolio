@@ -29,6 +29,10 @@ import tesla from "./company/tesla.png";
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
+import nft from "./nft.png";
+import noddy from "./noddy.png"
+import npm from "./npm.png"
+import portfolio from "./portfolio.png"
 
 export {
   logo,
@@ -59,4 +63,8 @@ export {
   carrent,
   jobit,
   tripguide,
+  noddy,
+  nft,
+  portfolio,
+  npm
 };

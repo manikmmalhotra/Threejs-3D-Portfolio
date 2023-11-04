@@ -23,7 +23,12 @@ import {
   jobit,
   tripguide,
   threejs,
-  logo
+  logo,
+  noddy,
+  nft,
+  portfolio,
+  npm
+
 } from "../assets";
 
 export const navLinks = [
@@ -121,7 +126,7 @@ const experiences = [
     company_name: "Kylo Apps",
     icon: logo,
     iconBg: "#383E56",
-    date: "Jan 2022 - Mar 2021",
+    date: "Jan 2022 - Mar 2022",
     points: [
       "Developing and maintaining web applications using React.js and other related technologies.",
       "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
@@ -197,16 +202,16 @@ const testimonials = [
 
 const projects = [
   {
-    name: "Car Rent",
+    name: "Manik | 3D Portfolio",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "Immerse yourself in my 3D portfolio, crafted with React, Three.js, Vite, and styled with Tailwind CSS for a visually stunning experience.",
     tags: [
       {
         name: "react",
         color: "blue-text-gradient",
       },
       {
-        name: "mongodb",
+        name: "Three.js",
         color: "green-text-gradient",
       },
       {
@@ -214,50 +219,67 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: carrent,
-    source_code_link: "https://github.com/",
+    image: portfolio,
+    source_code_link: "https://github.com/manikmmalhotra/Threejs-3D-Portfolio",
   },
   {
-    name: "Job IT",
+    name: "NFT-Cam",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      "• Aim is to animate 3d-nft’s with respect to the user.",
     tags: [
       {
         name: "react",
         color: "blue-text-gradient",
       },
       {
-        name: "restapi",
+        name: "MediaPipe",
         color: "green-text-gradient",
       },
       {
-        name: "scss",
+        name: "Three.js",
         color: "pink-text-gradient",
       },
     ],
-    image: jobit,
-    source_code_link: "https://github.com/",
+    image: nft,
+    source_code_link: "https://github.com/manikmmalhotra/nft-cam",
   },
   {
-    name: "Trip Guide",
+    name: "Android Generator (npm package)",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "It provides a generator to create and maintain a android application based on the latests frameworks and patterns used by the community.",
     tags: [
       {
-        name: "nextjs",
+        name: "JAVA",
         color: "blue-text-gradient",
       },
       {
-        name: "supabase",
+        name: "DAO",
         color: "green-text-gradient",
       },
       {
-        name: "css",
+        name: "MVVM",
         color: "pink-text-gradient",
       },
     ],
-    image: tripguide,
-    source_code_link: "https://github.com/",
+    image: npm,
+    source_code_link: "https://github.com/manikmmalhotra/generator-android-minks",
+  },
+  {
+    name: "Noddy:Note Anything (1.29k Installs)",
+    description:
+      "Noddy is an easy to use notepad for notes, to-do lists, etc. You can use it anytime and anywhere",
+    tags: [
+      {
+        name: "Kotlin",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "MVVM",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: noddy,
+    source_code_link: "https://github.com/manikmmalhotra/Noddy",
   },
 ];
 

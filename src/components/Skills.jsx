@@ -11,9 +11,15 @@ import PortalComponent from "./canvas/PortalComponent";
 
 const Skills = () => {
 
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (e) => {
+    setMousePosition({ x: e.clientX, y: e.clientY });
+  }
+
   return (
     <>
-    <div >
+    <div onMouseMove={handleMouseMove} >
       <motion.div variants={textVariant()}>
         <h2 className={styles.sectionHeadText}>Social Box.</h2>
       </motion.div>
@@ -23,7 +29,7 @@ const Skills = () => {
       <a href="https://play.google.com/store/apps/developer?id=Manik+Malhotra">
       <div className="text-white text-[18px] font-bold bottom-text">Play Store</div></a>
       <div style={{ width: "40vw", height: "60vh",alignItems:"center",justifyContent:"center",display:"flex" }}>
-          <PortalComponent />
+          <PortalComponent mousePosition={mousePosition} />
       </div>
       <a href="https://github.com/manikmmalhotra">
       <div className="text-white text-[18px] font-bold left-text">Github</div></a>
