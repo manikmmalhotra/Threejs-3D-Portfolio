@@ -4,7 +4,7 @@ import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
 import CanvasLoader from "../Loader";
 import StarsCanvas from "./Stars";
-import Model from "../model";
+import Model from "../Manik";
 
 
 const Me = () => {
