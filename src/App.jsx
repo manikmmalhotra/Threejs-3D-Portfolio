@@ -14,25 +14,28 @@ import {
 import { Icon,twitter, github } from "react-3d-icons";
 import PortalComponent from "./components/canvas/PortalComponent";
 import Skills from "./components/Skills";
+import { useEffect, useRef } from "react";
 
 const App = () => {
-
-  let cursorBall = document.querySelector(".cursor-ball");
-  let cursorOutline = document.querySelector(".cursor-outline");
-  document.addEventListener("mousemove", (e) => {
-    cursorBall.style.top = e.pageY + "px";
-    cursorBall.style.left = e.pageX + "px";
   
-    cursorOutline.style.top = e.pageY + "px";
-    cursorOutline.style.left = e.pageX + "px";
-  });
+  const cursorBall = useRef(null)
+  const cursorOutline = useRef(null)
+
+  const changePosition = (e) => {
+    cursorBall.current.style.top = `${e.clientY}px`;
+    cursorBall.current.style.left = `${e.clientX}px`;
+
+    cursorOutline.current.style.top = `${e.clientY}px`;
+    cursorOutline.current.style.left = `${e.clientX}px`;
+  }
+ 
 
   return (
     <BrowserRouter>
     
-       <div className="relative z-0 bg-primary">
-          <div className="cursor-ball"></div>
-          <div className="cursor-outline"></div>
+       <div onMouseMove={changePosition} className="relative z-0 bg-primary">
+          <div ref={cursorBall} className="cursor-ball"></div>
+          <div ref={cursorOutline} className="cursor-outline"></div>
         <StarsCanvas />
         <div className="bg-cover bg-no-repeat bg-center">
           <Navbar />
