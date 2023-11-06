@@ -43,7 +43,7 @@
 
 .cursor-ball, .cursor-outline {
   border-radius: 50%;
-  position: absolute;
+  position: fixed;
   z-index: 100;
   pointer-events: none;
   transform: translate(-50%, -50%);
