@@ -11,32 +11,26 @@ import {
   Works,
   StarsCanvas,
 } from "./components";
-import { Icon,twitter, github } from "react-3d-icons";
-import PortalComponent from "./components/canvas/PortalComponent";
 import Skills from "./components/Skills";
 import { useEffect, useRef } from "react";
+
+import AnimatedCursor from "react-animated-cursor";
 
 const App = () => {
   
 
-  const cursorBall = useRef(null)
-  const cursorOutline = useRef(null)
-
-  const changePosition = (e) => {
-    cursorBall.current.style.top = `${e.clientY}px`;
-    cursorBall.current.style.left = `${e.clientX}px`;
-
-    cursorOutline.current.style.top = `${e.clientY}px`;
-    cursorOutline.current.style.left = `${e.clientX}px`;
-  }
- 
-
   return (
     <BrowserRouter>
     
-       <div onMouseMove={changePosition} className="relative z-0 bg-primary">
-          <div ref={cursorBall} className="cursor-ball"></div>
-          <div ref={cursorOutline} className="cursor-outline"></div>
+       <div className="relative z-0 bg-primary">
+          <AnimatedCursor
+            innerSize={15}
+            outerSize={80}
+            color="255, 255, 255"
+            outerAlpha={0.3}
+            innerScale={0.7}
+            outerScale={1.4}
+          />
         <StarsCanvas />
         <div className="bg-cover bg-no-repeat bg-center">
           <Navbar />
