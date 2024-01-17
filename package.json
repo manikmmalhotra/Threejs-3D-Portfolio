@@ -21,11 +21,13 @@
     "react-3d-icons": "^1.0.2",
     "react-animated-cursor": "^2.11.2",
     "react-dom": "^18.2.0",
+    "react-icons": "^5.0.1",
     "react-router-dom": "^6.8.1",
     "react-spinners": "^0.13.8",
     "react-three-fiber": "^6.0.13",
     "react-tilt": "^0.1.4",
     "react-vertical-timeline-component": "^3.6.0",
+    "sass": "^1.69.7",
     "split-text-js": "^1.0.3",
     "three": "^0.149.0"
   },

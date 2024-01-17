@@ -42,9 +42,9 @@ const Hero = () => {
         className={`absolute inset-0 top-[30px] max-w-5xl mx-auto ${styles.paddingX} flex flex-row items-start gap-3`}
       >
         <div className={` mt-20`}>
-          <h1 className={`${styles.heroHeadText} text-white`}>
-            Hi, I'm <span className="text-[#915EFF]">Manik Malhotra</span>
-          </h1>
+          <div className={`${styles.heroHeadText} text-white`}>
+            Hi, I'm <span className="text-[#ff9301] text-[80px]">Manik Malhotra</span>
+          </div>
           <div className="container">
         <div className="text-wrapper">
         <p id="mink" className={`${styles.heroSubText} mt-2 text-white-100`}>

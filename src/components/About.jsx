@@ -6,6 +6,9 @@ import { styles } from "../styles";
 import { services } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
+import Social from "./Social";
+import ME from "../assets/me.png"
+import Service from "./Services";
 
 const ServiceCard = ({ index, title, icon }) => (
   <Tilt className="xs:w-[250px] w-full">
@@ -43,7 +46,7 @@ const About = () => {
         <h2 className={styles.sectionHeadText}>Overview.</h2>
       </motion.div>
 
-      <motion.p
+      {/* <motion.p
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
@@ -58,7 +61,61 @@ const About = () => {
         {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
         ))}
-      </div>
+      </div> */}
+
+      <section id="about" className="section dark-bg">
+        <div className="container">
+          <div className="row justify-content-center">
+            <div
+              className="col-md-6 col-lg-4"
+              data-aos="fade-up"
+              data-aos-duration="1200"
+            >
+              <div className="about-me">
+                <div className="img">
+                  <div className="img-in">
+                    <img src={ME} alt="about" />
+                  </div>
+                  <Social />
+                  {/* End social icon */}
+                </div>
+                {/* End img */}
+                <div className="info">
+                <h3>( Creative Web Developer )</h3>
+                  
+                </div>
+                {/* End info */}
+              </div>
+              {/* End about-me */}
+            </div>
+            {/* End col */}
+
+            <div
+              className="col-lg-7 ml-auto"
+              data-aos="fade-up"
+              data-aos-duration="1200"
+              data-aos-delay="200"
+            >
+              <div className="about-info">
+                <div className="about-text">
+                  <p>
+                  As a highly skilled software developer, I bring a wealth of experience in TypeScript and JavaScript, coupled with a deep understanding of versatile frameworks such as React, Node.js, and Three.js. My proficiency lies in crafting dynamic and responsive web applications, ensuring optimal performance and an enhanced user experience. Whether it's building interactive interfaces or developing robust backend systems, </p>
+                  <p>
+                    I am dedicated to delivering solutions that are not only efficient and scalable but also user-friendly. Let's join forces to transform your ideas into impactful digital realities!
+                  </p>
+                </div>
+              </div>
+            </div>
+            {/* End col */}
+          </div>
+
+           <motion.div variants={textVariant()}>
+        <p className={styles.sectionSubText}>What I Do ?</p>
+        <h2 className={styles.sectionHeadText}>Services</h2>
+           </motion.div>
+          <Service />
+          </div>
+          </section>
     </>
   );
 };

@@ -32,13 +32,21 @@
 }
 
 .text-wrapper > p {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 750;
   text-align: start;
   color: white; 
   line-height: 0;
   text-transform: uppercase;
   
+}
+
+
+.iccons > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
 
 .cursor-ball, .cursor-outline {
